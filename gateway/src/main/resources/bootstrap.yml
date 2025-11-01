@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: infinitepro-gateway
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        # 允许启动时不因Nacos未连接而失败
+        fail-fast: false
+        # 是否优先从OpenAPI读取服务信息（一般不建议开启）
+        prefer-ip-address: true
+        # 服务变化监听间隔（毫秒）
+        watch-delay: 30000
+
+      config:
+        server-addr: localhost:8848
+        # 配置文件后缀
+        file-extension: yaml
+        # 拉取超时时间（毫秒）
+        timeout: 30000
+        # 优先使用远程配置（本地仅作兜底）
+        remote-first: true
+        # 默认分组
+        group: DEFAULT_GROUP
+        # 命名空间（可改成你的命名空间ID）
+        namespace: public
+
+  config:
+    import:
+      - optional:nacos:infinitepro-gateway.yaml
