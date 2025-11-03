@@ -6,15 +6,31 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/home',
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomeView,
     },
     {
+      path: '/features/text-processing',
+      name: 'features-text',
+      component: () => import('../views/TextProcessingView.vue'),
+    },
+    {
+      path: '/features/image-tools',
+      name: 'features-image',
+      component: () => import('../views/ImageToolsView.vue'),
+    },
+    {
+      path: '/features/data-conversion',
+      name: 'features-data',
+      component: () => import('../views/DataConversionView.vue'),
+    },
+    {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
   ],
