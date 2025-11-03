@@ -1,22 +1,17 @@
 server:
-  port: 9000
+  port: 22010
 
 spring:
-  application:
-    name: infinitepro-gateway
-
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
-        fail-fast: false
-        prefer-open-api: true
-        watch-delay: 30000
+        server-addr: 127.0.0.1:22000   # Nacos 注册中心地址
       config:
-        server-addr: localhost:8848
-        file-extension: yaml
-        timeout: 30000
-        remote-first: true
+        server-addr: 127.0.0.1:22000   # Nacos 配置中心地址
+        namespace: public             # 可以自定义namespace
+        group: DEFAULT_GROUP          # 配置分组
+        file-extension: yaml          # 配置文件格式
+        name: ${spring.application.name}-config  # 配置文件名示例
 
     gateway:
       routes:
@@ -27,7 +22,3 @@ spring:
             - Path=/api/example/**
           filters:
             - StripPrefix=2
-
-  config:
-    import:
-      - optional:nacos:infinitepro-gateway.yaml

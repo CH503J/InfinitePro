@@ -1,6 +1,6 @@
 spring:
   application:
-    name: infinitepro-gateway
+    name: auth-service
 
   cloud:
     nacos:
@@ -10,4 +10,4 @@ spring:
 
   config:
     import:
-      - optional:nacos:infinitepro-gateway.yaml
+      - optional:nacos:auth-service.yaml

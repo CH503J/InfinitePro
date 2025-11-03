@@ -17,6 +17,7 @@
         <module>common</module>
         <module>config</module>
         <module>gateway</module>
+        <module>auth-service</module>
     </modules>
 
     <!-- 统一管理版本 -->
