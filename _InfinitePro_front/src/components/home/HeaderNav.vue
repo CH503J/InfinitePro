@@ -1,7 +1,9 @@
 <template>
   <header class="header">
     <div class="nav-container">
-      <div class="logo"><h1>InfinitePro</h1></div>
+      <div class="logo">
+        <img src="@/assets/无限进步logo.png" alt="InfinitePro Logo" class="logo-image" />
+      </div>
       <nav class="nav-menu">
         <a href="#features" class="nav-link">功能</a>
         <a href="#about" class="nav-link">关于</a>
@@ -33,10 +35,9 @@
   align-items: center;
   padding: 0 2rem;
 }
-.logo h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
+.logo-image {
+  height: 32px;
+  width: auto;
 }
 .nav-menu {
   display: flex;
