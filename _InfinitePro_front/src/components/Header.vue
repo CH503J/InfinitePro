@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="brand">
         <RouterLink to="/home" class="brand-link">
-          <img class="brand-logo" src="@/assets/brand-logo.svg" alt="Project Logo" />
+          <img class="brand-logo" src="@/assets/无限进步logo.png" alt="Project Logo" />
         </RouterLink>
       </div>
       <nav class="nav">
