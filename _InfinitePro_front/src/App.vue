@@ -2,6 +2,7 @@
 import {RouterView} from 'vue-router'
 import ThemeToggle from './components/ThemeToggle.vue'
 import AppHeader from './components/AppHeader.vue'
+import GlobalBackground from './global/GlobalBackground.vue'
 import {NConfigProvider, darkTheme, useOsTheme} from 'naive-ui'
 import {ref, computed} from 'vue'
 

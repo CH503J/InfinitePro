@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// 首页组件 - 不需要额外的逻辑
 </script>
 
 <template>

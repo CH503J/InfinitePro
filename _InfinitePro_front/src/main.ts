@@ -5,8 +5,8 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-import GlobalBackground from './components/GlobalBackground.vue'
 import AppHeader from './components/AppHeader.vue'
+import GlobalBackground from './global/GlobalBackground.vue'
 
 // 引入 Naive UI
 import naive from 'naive-ui'

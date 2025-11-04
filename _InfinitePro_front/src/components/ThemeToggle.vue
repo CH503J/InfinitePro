@@ -4,6 +4,7 @@ import {NSwitch} from 'naive-ui'
 
 const isDark = ref(false)
 
+// 更新主题状态
 const updateTheme = () => {
   const storedTheme = localStorage.getItem('theme')
   if (storedTheme) {
@@ -13,12 +14,14 @@ const updateTheme = () => {
   }
 }
 
+// 切换主题
 const toggleTheme = () => {
   isDark.value = !isDark.value
   // 触发自定义事件，通知父组件主题已切换
   emit('toggleTheme')
 }
 
+// 设置开关轨道样式
 function railStyle({focused, checked}: { focused: boolean; checked: boolean }) {
   const style: { background?: string; boxShadow?: string } = {}
   if (checked) {

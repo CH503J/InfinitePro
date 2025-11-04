@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-// 全局背景组件不需要任何逻辑，它只是根据CSS类来显示不同的背景色
+// 全局背景组件 - 根据CSS类显示不同的背景色
 </script>
 
 <style scoped>

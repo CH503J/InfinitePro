@@ -17,6 +17,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
+// 点击Logo跳转到首页
 const goToHome = () => {
   router.push('/home')
 }
