@@ -4,10 +4,10 @@
 <template>
   <div class="home-view">
     <div class="section home-section">
-      <h1>首页</h1>
-      <p>欢迎来到 InfinitePro 项目!</p>
+      <h1>InfinitePro</h1>
+      <p>迎来无限可能</p>
       <div class="scroll-indicator">
-        <span>向下滚动了解更多</span>
+        <span>了解更多</span>
       </div>
     </div>
 
@@ -59,7 +59,6 @@
 
 .about-section {
   padding: 20px;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -117,10 +116,11 @@
 
 .copyright {
   text-align: center;
-  color: var(--color-text-muted);
+  color: var(--color-text);
   font-size: 13px;
   padding-top: 15px;
   border-top: 1px solid var(--color-border);
+  opacity: 0.8;
 }
 
 .scroll-indicator {
