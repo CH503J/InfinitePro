@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import {ref} from 'vue'
-import {NButton, NCard, NSwitch, NInput, NFormItem, NLayout, NLayoutContent} from 'naive-ui'
 
-const count = ref(0)
-const inputValue = ref('')
-const switchValue = ref(false)
 </script>
 
 <template>
@@ -16,6 +11,6 @@ const switchValue = ref(false)
 
 <style scoped>
 .home-view {
-  padding: 20px;
+  padding: 80px 20px 20px;
 }
 </style>
