@@ -2,9 +2,9 @@
   <header class="app-header">
     <div class="header-container">
       <div class="logo-container" @click="goToHome">
-        <img 
-          src="@/assets/infinitePro-logo.png" 
-          alt="InfinitePro Logo" 
+        <img
+          src="@/assets/infinitePro-logo.png"
+          alt="InfinitePro Logo"
           class="logo"
         />
       </div>
@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import {useRouter} from 'vue-router'
 
 const router = useRouter()
 

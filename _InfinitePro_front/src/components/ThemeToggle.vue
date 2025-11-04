@@ -57,12 +57,8 @@ defineExpose({
     @update:value="toggleTheme"
     class="theme-toggle"
   >
-    <template #checked>
-      🌙
-    </template>
-    <template #unchecked>
-      🌞
-    </template>
+    <template #checked>🌙</template>
+    <template #unchecked>🌞</template>
   </n-switch>
 </template>
 
