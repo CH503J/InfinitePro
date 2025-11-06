@@ -27,11 +27,19 @@
         <spring-cloud.version>2024.0.0</spring-cloud.version>
         <spring-cloud-alibaba.version>2023.0.1.0</spring-cloud-alibaba.version>
         <lombok.version>1.18.30</lombok.version>
+        <common.version>0.0.1-SNAPSHOT</common.version>
+        <mybatis-plus.version>3.5.9</mybatis-plus.version>
     </properties>
 
     <!-- Spring Cloud BOM -->
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.infinitepro</groupId>
+                <artifactId>common</artifactId>
+                <version>${common.version}</version>
+            </dependency>
             <!-- Spring Boot Dependencies -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
