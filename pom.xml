@@ -67,6 +67,19 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- MyBatis Plus Dependencies -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
             <!-- Other Dependencies -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
