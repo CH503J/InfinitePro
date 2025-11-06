@@ -18,9 +18,8 @@ import java.time.LocalDateTime;
  * - 更新人、更新时间
  * - 删除标志
  * <p>
- * 注意：
- * - LocalDateTime 字段序列化/反序列化将在全局 Jackson 配置中统一处理
  */
+//MGZ TODO 2025/11/6:后期可以考虑做一个 MetaObjectHandler 减少更新时间、更新人之类的set代码了，这个是MyBatisPlus提供的配置类，如需配置可以在config包下进行配置
 @Data
 @Accessors(chain = true)
 public class BaseEntity implements Serializable {
@@ -43,9 +42,9 @@ public class BaseEntity implements Serializable {
     /**
      * 创建时间
      */
+    // 这里已经设置了全局的Jackson序列化和反序列化的配置，所以这里就不需要配置了
     @TableField(value = "create_time", fill = FieldFill.INSERT)
     private LocalDateTime createTime;
-    // ⚠️ 提醒：统一 LocalDateTime 序列化/反序列化规则，建议在全局 Jackson 配置中处理
 
     /**
      * 更新人
@@ -56,9 +55,9 @@ public class BaseEntity implements Serializable {
     /**
      * 更新时间
      */
+    // 这里已经设置了全局的Jackson序列化和反序列化的配置，所以这里就不需要配置了
     @TableField(value = "update_time", fill = FieldFill.UPDATE)
     private LocalDateTime updateTime;
-    // ⚠️ 同样提醒：LocalDateTime 全局序列化/反序列化
 
     /**
      * 逻辑删除标志
