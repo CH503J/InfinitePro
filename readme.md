@@ -1,4 +1,6 @@
-# InfinitePro配置
+# InfinitePro
+
+输出文件夹结构文件命令：`tree /F /A > structure.txt`
 
 ## 一、项目端口号
 
@@ -31,3 +33,4 @@
 ### 2.1 项目包
 - 项目名：_InfinitePro_front
 - 已选包：Router、Pinia、ESLint、Prettier、TypeScript
+
