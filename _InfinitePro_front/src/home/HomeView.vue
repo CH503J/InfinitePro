@@ -21,7 +21,7 @@
       <!-- 第二行：简介内容和链接 -->
       <div class="about-content">
         <div class="description">
-          <p>InfinitePro 是一个现代化的前端项目，使用 Vue 3 和 Naive UI 构建。我们致力于创建高性能、易于维护的 Web 应用程序。</p>
+          <p>实战中进步，厚积薄发，总有一天迎来无限可能。</p>
         </div>
         <div class="links">
           <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
