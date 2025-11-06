@@ -8,6 +8,9 @@
           class="logo"
         />
       </div>
+      <div class="header-actions">
+        <button class="accent-button" @click="goToAccentCenter">个人中心</button>
+      </div>
     </div>
   </header>
 </template>
@@ -20,6 +23,11 @@ const router = useRouter()
 // 点击Logo跳转到首页
 const goToHome = () => {
   router.push('/home')
+}
+
+// 跳转到Accent Center页面
+const goToAccentCenter = () => {
+  router.push('/accent-center')
 }
 </script>
 
@@ -70,5 +78,27 @@ const goToHome = () => {
   height: 40px;
   width: auto;
   display: block;
+}
+
+.header-actions {
+  margin-left: auto;
+  margin-right: 60px; /* 为避免与主题切换器重叠预留空间 */
+  display: flex;
+  gap: 10px;
+}
+
+.accent-button {
+  padding: 8px 16px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.accent-button:hover {
+  opacity: 0.8;
 }
 </style>

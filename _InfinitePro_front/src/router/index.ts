@@ -1,5 +1,6 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import HomeView from '../home/HomeView.vue'
+const AccentCenter = () => import('../views/accentCenter/index.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,6 +13,11 @@ const router = createRouter({
       path: '/home',
       name: 'home',
       component: HomeView,
+    },
+    {
+      path: '/accent-center',
+      name: 'accent-center',
+      component: AccentCenter,
     }
     // 移除了 /about 路由，因为关于页面内容已经整合到首页
   ],
