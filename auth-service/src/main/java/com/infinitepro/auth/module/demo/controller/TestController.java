@@ -38,7 +38,6 @@ public class TestController {
     @GetMapping("/hello1")
     public ApiResult<String> hello(@RequestParam("code") Integer code) {
 
-        log.info("GlobalExceptionHandler 已加载？ {}", globalExceptionHandler != null);
         if (code == 1) {
             String hello = "hello world";
             log.info("该节点返回字符串 {}", hello);

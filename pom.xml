@@ -30,6 +30,7 @@
         <mybatis-plus.version>3.5.9</mybatis-plus.version>
         <jackson.version>2.18.2</jackson.version>
         <mysql.version>9.1.0</mysql.version>
+        <servlet.version>6.0.0</servlet.version>
     </properties>
 
     <!-- Spring Cloud BOM -->
@@ -40,6 +41,13 @@
                 <groupId>com.infinitepro</groupId>
                 <artifactId>common</artifactId>
                 <version>${common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${servlet.version}</version>
+                <scope>provided</scope>
             </dependency>
 
             <!-- MySQL依赖 -->

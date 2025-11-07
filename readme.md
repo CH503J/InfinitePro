@@ -34,3 +34,66 @@
 - 项目名：_InfinitePro_front
 - 已选包：Router、Pinia、ESLint、Prettier、TypeScript
 
+```mermaid
+flowchart TD
+    subgraph Microservices[微服务架构]
+        GW[网关服务 Gateway]
+        Auth[鉴权微服务 Auth-Service]
+    end
+
+    subgraph Common[common 模块（已完成）]
+        Base[BaseDTO / BaseIdDTO / BaseIdEntity]
+        ApiRes[ApiResult 返回类]
+        Enum[CodeEnum / StatusEnum]
+        GlobalEx[GlobalException / GlobalExceptionHandler]
+        Jackson[JacksonConfig 序列化/反序列化]
+    end
+
+    subgraph ConfigCenter[Nacos 配置中心]
+        Nacos[Nacos 配置]
+    end
+
+    subgraph Completed[已完成功能]
+        CORS[跨域配置 GatewayCorsConfig]
+    end
+
+    subgraph ToDo[待开发全局功能]
+        Interceptor[全局拦截器/过滤器\n（日志/鉴权/限流）]
+        Constant[全局常量类\n（状态码/配置常量）]
+        Aspect[全局切面\n（日志/性能/异常处理）]
+    end
+
+    %% 服务与 common 依赖
+    GW --> Base
+    GW --> ApiRes
+    GW --> Enum
+    GW --> GlobalEx
+    GW --> Jackson
+    Auth --> Base
+    Auth --> ApiRes
+    Auth --> Enum
+    Auth --> GlobalEx
+    Auth --> Jackson
+
+    %% 服务与 Nacos 关系
+    GW --> Nacos
+    Auth --> Nacos
+
+    %% 已完成功能
+    GW --> CORS
+
+    %% 待开发模块关系
+    GW --> Interceptor
+    Auth --> Interceptor
+    GW --> Constant
+    Auth --> Constant
+    GW --> Aspect
+    Auth --> Aspect
+
+    %% 可选标注
+    style Completed fill:#c8f7c5,stroke:#2e7d32,stroke-width:2px
+    style ToDo fill:#f9f2c2,stroke:#d68910,stroke-width:2px
+    style Common fill:#d0e1f9,stroke:#2176bd,stroke-width:2px
+    style ConfigCenter fill:#f0d0d0,stroke:#b22222,stroke-width:2px
+
+```
