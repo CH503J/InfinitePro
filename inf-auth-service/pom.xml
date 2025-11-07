@@ -49,7 +49,7 @@
 
         <dependency>
             <groupId>com.infinitepro</groupId>
-            <artifactId>infinite-common</artifactId>
+            <artifactId>inf-common</artifactId>
         </dependency>
     </dependencies>
 
