@@ -13,30 +13,24 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>gateway</artifactId>
-    <name>gateway</name>
-    <description>InfinitePro 网关模块</description>
+    <artifactId>inf-auth-service</artifactId>
+    <name>auth-service</name>
+    <description>InfinitePro 认证服务模块</description>
 
     <dependencies>
-        <!-- Spring Cloud Gateway -->
+        <!-- Spring Boot Web -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Spring Cloud LoadBalancer -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-        </dependency>
-
-        <!-- Nacos Discovery -->
+        <!-- Spring Cloud Nacos Discovery -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <!-- Nacos Config -->
+        <!-- Spring Cloud Nacos Config -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
@@ -51,7 +45,11 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.infinitepro</groupId>
+            <artifactId>infinite-common</artifactId>
         </dependency>
     </dependencies>
 

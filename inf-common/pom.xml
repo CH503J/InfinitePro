@@ -13,7 +13,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>common</artifactId>
+    <artifactId>inf-common</artifactId>
     <name>common</name>
     <description>InfinitePro 通用模块</description>
 

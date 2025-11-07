@@ -14,9 +14,9 @@
     <description>InfinitePro parent project</description>
 
     <modules>
-        <module>common</module>
-        <module>gateway</module>
-        <module>auth-service</module>
+        <module>inf-common</module>
+        <module>inf-gateway</module>
+        <module>inf-auth-service</module>
     </modules>
 
     <!-- 统一管理版本 -->
@@ -39,7 +39,7 @@
 
             <dependency>
                 <groupId>com.infinitepro</groupId>
-                <artifactId>common</artifactId>
+                <artifactId>inf-common</artifactId>
                 <version>${common.version}</version>
             </dependency>
 
