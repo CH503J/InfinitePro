@@ -1,4 +1,4 @@
-package com.infinitepro.auth.config;
+package com.infinitepro.auth.config.interceptor;
 
 import com.infinitepro.common.interceptor.GlobalInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;

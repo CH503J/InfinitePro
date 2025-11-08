@@ -1,4 +1,4 @@
-package com.infinitepro.auth.config;
+package com.infinitepro.auth.config.authorization;
 
 import com.infinitepro.auth.module.user.service.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
+import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 public class SecurityConfig {
@@ -26,6 +28,7 @@ public class SecurityConfig {
      */
     @Bean
     public PasswordEncoder passwordEncoder() {
+        // TODO 如果以后需要可切换为更安全的 Argon2PasswordEncoder
         return new BCryptPasswordEncoder();
     }
 
@@ -52,14 +55,17 @@ public class SecurityConfig {
      * 核心安全过滤器配置
      */
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain appSecurityFilterChain(HttpSecurity http) throws Exception {
         http
+                .securityMatcher("/**") // 匹配业务接口
                 .csrf(csrf -> csrf.disable())
                 .authenticationProvider(authenticationProvider())
                 .authorizeHttpRequests(auth -> auth
+                        // TODO 将登录/注册端点统一配置在常量类或从配置中心获取
                         .requestMatchers("/auth/login-test", "/auth/register", "/auth/login").permitAll()
                         .anyRequest().authenticated()
-                );
+                )
+                .formLogin(withDefaults());
         return http.build();
     }
 }
