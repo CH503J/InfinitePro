@@ -1,0 +1,31 @@
+server:
+  port: 21010
+  forward-headers-strategy: framework
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:22000
+        fail-fast: false
+        prefer-open-api: true
+        watch-delay: 30000
+        timeout: 30000
+        heart-beat-interval: 5000
+        heart-beat-timeout: 15000
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/infinitepro_auth?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true
+    username: root
+    password: 'admin@123'
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: TRACE
+    org.springframework.security.web: DEBUG
+    org.springframework.security.oauth2.server.authorization: TRACE
+    org.springframework.security.oauth2.server.authorization.web: TRACE
+    org.springframework.security.oauth2.server.authorization.authentication: TRACE
+    org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers: TRACE

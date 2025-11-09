@@ -1,0 +1,49 @@
+server:
+  port: 22010
+  forward-headers-strategy: framework
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:22000
+        fail-fast: false
+        prefer-ip-address: true
+        watch-delay: 30000
+        timeout: 30000
+        heart-beat-interval: 5000
+        heart-beat-timeout: 15000
+
+    gateway:
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=2
+    default-filters:
+      - AddRequestHeader=X-Forwarded-Proto,http
+      - AddRequestHeader=X-Forwarded-Host,localhost:22010
+      - AddRequestHeader=X-Forwarded-Port,22010
+
+cors:
+  allowed-origins:
+    - http://localhost:29999
+    - http://192.168.101.102:29999
+  allowed-methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+    - HEAD
+    - PATCH
+  allowed-headers:
+    - "*"
+  allowed-credentials: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG

@@ -65,7 +65,7 @@ public class AuthorizationServerConfig {
     public AuthorizationServerSettings authorizationServerSettings() {
         // TODO 修改issuer为线上部署地址，如 https://auth.infinitepro.com
         return AuthorizationServerSettings.builder()
-                .issuer("http://localhost:22010")
+                .issuer("http://localhost:21010")
                 .build();
     }
 }

@@ -40,21 +40,31 @@ public class GatewayCorsConfig {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // 动态添加前端允许的域名
-        allowedOrigins.forEach(config::addAllowedOrigin);
+        // 支持通配符匹配所有域（建议开发环境用，生产可改为白名单）
+        if (allowedOrigins.isEmpty()) {
+            config.addAllowedOriginPattern("*");
+        } else {
+            allowedOrigins.forEach(config::addAllowedOriginPattern);
+        }
 
-        // 动态添加允许的请求方法
-        allowedMethods.forEach(config::addAllowedMethod);
+        // 方法、请求头
+        if (allowedMethods.isEmpty()) {
+            config.addAllowedMethod("*");
+        } else {
+            allowedMethods.forEach(config::addAllowedMethod);
+        }
 
-        // 动态添加允许的请求头
-        allowedHeaders.forEach(config::addAllowedHeader);
+        if (allowedHeaders.isEmpty()) {
+            config.addAllowedHeader("*");
+        } else {
+            allowedHeaders.forEach(config::addAllowedHeader);
+        }
 
         config.setAllowCredentials(allowedCredentials);
 
-        // 对所有路径生效
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
-
         return new CorsWebFilter(source);
     }
+
 }
